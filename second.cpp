@@ -43,12 +43,6 @@
 
         Mat logo = imread("logo.png", IMREAD_UNCHANGED);
         Mat caption = imread("caption.png", IMREAD_UNCHANGED);
-        cout << "logo: " << (logo.empty() ? "EMPTY" : "OK")
-         << " size=" << logo.cols << "x" << logo.rows
-         << " ch=" << logo.channels() << endl;
-        cout << "caption: " << (caption.empty() ? "EMPTY" : "OK")
-             << " size=" << caption.cols << "x" << caption.rows
-             << " ch=" << caption.channels() << endl;
 
 
 
