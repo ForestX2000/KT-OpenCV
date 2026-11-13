@@ -8,9 +8,7 @@ include_directories(.)
 
 add_executable(KT_OpenCV
         first.cpp
-        first.h
-        second.cpp
-        second.h)
+        first.h)
 
 add_executable(KT_OpenCV_2
         second.cpp
