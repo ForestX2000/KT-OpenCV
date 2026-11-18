@@ -11,22 +11,6 @@
     #include <ctime>
 
 
-    void image(Mat *src, Mat *overlay, const Point &location) {
-        for (int y = max(location.y, 0); y < src->rows; ++y) {
-            int fY = y - location.y;
-            if (fY >= overlay->rows) break;
-            for (int x = max(location.x, 0); x < src->cols; ++x) {
-                int fX = x - location.x;
-                if (fX >= overlay->cols) break;
-                double opacity = ((double)overlay->at<Vec4b>(fY, fX)[3]) / 255.0;
-                if (opacity > 0) {
-                    for (int c = 0; c < 3; ++c) {
-                        src->at<Vec3b>(y, x)[c] = (uchar)(overlay->at<Vec4b>(fY, fX)[c] * opacity + src->at<Vec3b>(y, x)[c] * (1.0 - opacity));
-                    }
-                }
-            }
-        }
-    }
 
     void addClock(Mat &img, int margin) {
         time_t now = time(0);
